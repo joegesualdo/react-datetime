@@ -304,7 +304,8 @@ var Datetime = React.createClass({
 	},
 
 	handleClickOutside: function(){
-		if( this.props.input && this.state.open && !this.props.open ){
+		// if( this.props.input && this.state.open && !this.props.open ){
+		if( this.props.input && (this.state.open || this.props.open)) {
 			this.setState({ open: false });
 			this.props.onBlur( this.state.selectedDate || this.state.inputValue );
 		}
